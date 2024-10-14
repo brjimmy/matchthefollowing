@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    margin-top: -40px; /* Adjust this value to reduce the space above */
+    margin-bottom: 20px; /* Keep this as needed for spacing below */
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    width: 1200px;
+    justify-content: space-between;
+}
+
+
+
+.item {
+    width: 300px;
+    height: 50px;
+    background-color: #66cdaa;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.item.dragging {
+    opacity: 0.5;
+}
+
+.drop-zone {
+    width: 300px;
+    height: 50px;
+    background-color: #f4a261;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+}
+
+.paired {
+    position: absolute;
+    left: -310px;
+    top: 10px;
+}
+
+.placeholder {
+    width: 350px;
+    height: 50px;
+    border: 2px dashed #bbb;
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Fixed gap between all items and placeholders */
+    width: 350px;
+	text-align: center;
+	font-size: 15px;
+	
+}
+
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Fixed gap between all items and placeholders */
+    width: 350px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.item, .placeholder {
+    width: 300px;
+    height: 50px;
+    background-color: #66cdaa; /* Teal color for items */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Ensure consistent sizing */
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Ensure no padding affects layout */
+}
+
+/* Specific style for placeholder */
+.placeholder {
+    border: 2px dashed #bbb;
+    background-color: transparent;
+}
+
+.left-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Maintain consistent gap */
+    width: 350px; /* Adjust the width to your preference */
+
+}
+
+.item, .drop-zone {
+    width: 350px; /* Ensure the boxes match the column width */
+    height: 50px; /* Keep the height consistent */
+    border-radius: 5px;
+}
+
+
+
+/* Tick or cross icon, positioned outside the drop zone */
+.result-icon {
+    position: absolute;
+    right: -35px; /* Place the icon outside the right border */
+    top: 50%; /* Center the icon vertically */
+    transform: translateY(-50%);
+    font-size: 24px;
+    display: none;
+}
+
+/* Green tick mark */
+.correct {
+    color: green !important; /* Ensure the tick mark is green */
+    display: block;
+	font-size: 48x !important; /* Consistent font size */
+
+}
+
+/* Red cross mark */
+.incorrect {
+    color: red;
+    display: block;
+}
+
+/* Left-side items (Teal) */
+.item {
+    width: 350px; /* Keep the original width */
+    height: 50px;
+    background-color: #66cdaa;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    padding: 10px; /* Add padding for space around the text */
+    box-sizing: border-box; /* Prevent padding from changing box size */
+    text-align: center; /* Center align text horizontally */
+    word-wrap: break-word; /* Wrap long text */
+}
+
+/* Right-side drop zones (Orange) */
+.drop-zone {
+    width: 350px; /* Keep the original width */
+    height: 50px;
+    background-color: #f4a261;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: relative; /* Ensure the result icon aligns properly */
+    padding: 10px; /* Add padding for space around the text */
+    box-sizing: border-box; /* Maintain box size */
+    text-align: center; /* Center align text */
+    word-wrap: break-word; /* Wrap long text */
+}
+
+
+.button-container {
+    display: flex; /* Use flexbox to align buttons */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Add space above the buttons */
+}
+
+button {
+    padding: 10px 20px; /* Uniform padding */
+    font-size: 18px; /* Uniform font size */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: 150px; /* Set fixed width for uniform size */
+}
+
+/* Submit button styles */
+#submit-btn {
+    background-color: #4CAF50; /* Green color for submit */
+    color: white;
+}
+
+#submit-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Reset button styles */
+#reset-btn {
+    background-color: #f44336; /* Red color for reset */
+    color: white;
+}
+
+#reset-btn:hover {
+    background-color: #e53935; /* Darker red on hover */
+}
